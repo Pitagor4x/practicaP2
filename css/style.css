@@ -26,12 +26,14 @@ header{
 }
 
 h1{
+    font-weight: bold;
     color: gainsboro;
     font-family: var(--font);
     font-size: 1.5em;
 }
 
 header p{
+    font-weight: bold;
     font-size: 1.5em;
     font-family: var(--font);
     color: gainsboro;
@@ -55,9 +57,24 @@ header p{
     justify-content: center;
     align-items: center;
     padding: 0.5em;
-    border-radius: 20px;
+    border-radius: 50%;
     box-shadow: 3px 3px 3px grey;
 }
+
+.addTask:hover{
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px grey;
+}
+
+.search:hover{
+    box-shadow: 4px 4px 4px grey;
+    transform: translateY(-2px);
+}
+
+
+/* BOTON APRETADO
+transform: translateY(1px);
+box-shadow: none; */
 
 .addTask i, .search i{
     color: white;
@@ -76,3 +93,104 @@ select{
 input{
     display: none;
 }
+
+/* FINAL MENU ADDTASK SEARCH-------------------------------- */
+
+/* INICIO TASKBOX------------------------------- */
+
+section{
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+article{
+    background-color: gainsboro;
+    margin: 1em auto;
+    width: 85%;
+    border-radius: 40px;
+
+    padding: 1em;
+    box-shadow: 3px 3px 3px grey;
+    position: relative;
+}
+
+article:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px grey;
+    transition: 0.2s;
+}
+
+.fecha{
+    font-size: 0.9em;
+    border-bottom: 1px dashed grey;
+    font-family: var(--font);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+h3{
+    margin-left: 1em;
+    font-family: var(--font);
+    font-size: 1.05em;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.task>p{
+    margin-left: 1em;
+    font-family: var(--font);
+    font-size: 0.8em;
+}
+
+.deleteZone{
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+}
+
+.deleteZone>i{
+    border-radius: 50%;
+    padding: 5px;
+    color: white;
+    background-color: red;
+}
+
+
+/* FINAL TASKBOX---------------------------------------- */
+
+/* MEDIAQUERYS */
+
+@media(min-width: 850px){
+    .flex{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    article{
+        margin: 2em 1em;
+        width: calc(25% - 2em);
+        min-height: 200px;
+    }
+
+    .deleteZone{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .deleteZone>i{
+        border-radius: 50%;
+        padding: 10px;
+        color: white;
+        background-color: red;
+    }
+
+    .task>p{
+        width: 75%;
+    }
+
+}
+
