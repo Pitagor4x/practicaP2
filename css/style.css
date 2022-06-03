@@ -44,57 +44,97 @@ header p{
 }
 /* ------------------------------------------------------------------------FINAL HEADER */
 
-/* -------------------------------------------------------------------MENU BUSCADOR ADDTASK */
-
+/* -------------------------------------------------------------------MENU*/
 .menu{
     padding: 1em;
     background-color: gainsboro;
-    display: flex;
-    justify-content: space-around;
+    overflow: hidden;
 }
 
-.addTask, .search{
+.menutop{
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1em;
+}
+
+.menubottom{
+    padding: 0.5em;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnTask , .btnSearch, .btnArrow{
     width: 50px;
-    border: 1px solid grey;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5em;
     border-radius: 50%;
     box-shadow: 3px 3px 3px grey;
+    cursor: pointer;
 }
 
-/* .openAddTask{
-    width: 200px;
-} */
-
-.addTask:hover{
+.btnSearch:hover{
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px grey;
+}
+.btnArrow:hover{
     transform: translateY(-2px);
     box-shadow: 4px 4px 4px grey;
 }
 
-.search:hover{
+.btnTask:hover{
     box-shadow: 4px 4px 4px grey;
     transform: translateY(-2px);
-}
+    
+} 
 
-.addTask i, .search i{
+.btnTask i, .btnSearch i , .btnArrow i{
     color: white;
     background-color: grey;
     border-radius: 50%;
     padding: 0.5em;
     box-shadow: 1px 1px 1px grey;
-    /* margin-right: 1em; */
+
 }
 
 select{
-    display: none;
-    margin-left:1em ;
-    width: 100px;
-}
-input{
-    display: none;
-}
+    width: auto;
+    background-color: gainsboro;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    box-shadow: 2px 2px 2px grey;
+ }
+ 
+ .inText{
+     margin-right: 1em;
+    width: 150px;
+    background-color: gainsboro;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    box-shadow: 2px 2px 2px grey;
+   
+ }
+ 
+ .inSearch{
+    
+     margin-top: 1em;
+     width: 150px;
+     background-color: gainsboro;
+     border: none;
+     border-radius: 15px;
+     color: black;
+     padding: 5px;
+     box-shadow: 2px 2px 2px grey;
+ }
 
 /* FINAL MENU ADDTASK SEARCH-------------------------------- */
 
@@ -110,7 +150,6 @@ article{
     margin: 1em auto;
     width: 85%;
     border-radius: 40px;
-
     padding: 2em;
     box-shadow: 3px 3px 3px grey;
     position: relative;
@@ -131,7 +170,8 @@ h3{
     margin-bottom: 1rem;
 }
 
-p{
+article p{
+    width: 85%;
     margin-left: 1rem;
     font-family: var(--font);
     font-size: 0.9em;
@@ -145,10 +185,19 @@ p{
 
 .deleteZone>i{
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
     color: white;
     background-color: red;
+    box-shadow: 1px 1px 1px darkred;
+    cursor: pointer;
 }
+
+.deleteZone:hover i{
+    box-shadow: 3px 3px 3px darkred;
+    transform: translateY(-2px);
+
+}
+
 
 /* FINAL TASKBOX---------------------------------------- */
 
@@ -199,7 +248,7 @@ p{
         background-color: red;
     }
 
-    .task>p{
+    article p{
         width: 75%;
     }
 

@@ -1,12 +1,14 @@
 const btnTask = document.querySelector('.btnTask');
 const btnSearch = document.querySelector('.btnSearch');
 const taskName = document.querySelector('.inText');
-const taskDate = document.querySelector('.inDate');
 const searchBar = document.querySelector('.inSearch');
 const taskBox = document.querySelector('.flex');
 
-/* PINTAR LAS TAREAS */
+const taskDescription = document.querySelector('article>p')
+
+/* PINTAR LAS TAREAS  -FUNCIONA */
 function pintarTareas(pTareas, pDom) {
+    pDom.innerHTML = "";
     pTareas.forEach(tarea => pintarTarea(tarea, pDom));
 }
 
@@ -23,3 +25,37 @@ function pintarTarea(pTarea, pDom) {
 }
 
 pintarTareas(tasksReverse, taskBox)
+
+/* AÑADIR TAREAS AL ARRAY -FUNCIONA*/
+
+function addTask(pNombre, pDescripcion, pPrioridad) {
+    let nombre = pNombre;
+    let descripcion = pDescripcion;
+    let prioridad = pPrioridad
+
+    const newTask = {
+        nombre: nombre,
+        descripcion: descripcion,
+        prioridad: prioridad,
+    }
+
+    tasks.push(newTask);
+    pintarTarea(newTask, taskBox)
+}
+
+/* addTask('Hola', 'Caracola', 'media') */
+
+/* BUSCADOR SEMANTICO -FUNCIONA*/
+
+searchBar.addEventListener('input', busqueda);
+
+function busqueda(event) {
+    let busqueda = event.target.value;
+    pintarTareas(filterByLetter(tasksReverse, busqueda), taskBox)
+}
+
+/* EVENTO AÑADIR TAREA */
+
+/* PINTAR EL MENU BOTTOM */
+
+/* ELIMINAR TAREAS */

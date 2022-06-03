@@ -5,32 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de tareas</title>
+    <title>To Do's</title>
+    <link rel="stylesheet" href="./css/stylepruebas.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/tasks.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Task List</h1>
+        <h1>To Do's</h1>
         <p>Pitapp&copy;</p>
     </header>
     <main>
+
         <div class="menu">
-            <div class="addTask">
+            <div class="menutop">
                 <div class="btnTask">
                     <i class="fa-solid fa-plus"></i>
                 </div>
-                <input class="inText" type="text">
-                <select name="" id="">
-                    <option value=""></option>
-                </select>
-            </div>
-            <div class="search">
+                <div class="btnArrow">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
                 <div class="btnSearch">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input class="inSearch" type="text">
+            </div>
+            <div class="menubottom">
+                <div class="taskNameSelector">
+                    <input class="inText" type="text" placeholder="Nombre de la tarea">
+                    <select name="" id="">
+                        <option value="" selected='selected'>Prioridad</option>
+                        <option value="">Baja</option>
+                        <option value="">Media</option>
+                        <option value="">Alta</option>
+                    </select>
+                </div>
+                <input placeholder="Buscar tarea" class="inSearch" type="text">
             </div>
         </div>
         <section class="taskBox">
