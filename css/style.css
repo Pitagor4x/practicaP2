@@ -61,6 +61,21 @@ header p{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translatey(200px);
+    height: 0;
+    transition: 0.4s;
+}
+
+.menubottomh{
+    height: auto;
+    transform: translatey(0px);
+    visibility:visible;
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s; 
 }
 
 .btnTask , .btnSearch, .btnArrow{
@@ -75,18 +90,16 @@ header p{
     cursor: pointer;
 }
 
-
-.btnPress{
-width: 50px;
-height: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 0.5em;
-border-radius: 50%;
-cursor: pointer;
-transform: translateY(1px);
-box-shadow: none;
+.btnArrowRotate{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer; 
 }
 
 .btnSearch:hover{
@@ -110,7 +123,16 @@ box-shadow: none;
     border-radius: 50%;
     padding: 0.5em;
     box-shadow: 1px 1px 1px grey;
+    transition: 0s;
+}
 
+.btnArrowRotate i{
+    color: white;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: none;
+    transform: rotateZ(180deg);
 }
 
 select{

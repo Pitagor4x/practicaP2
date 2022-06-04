@@ -6,7 +6,8 @@ const searchBar = document.querySelector('.inSearch');
 const taskBox = document.querySelector('.flex');
 const selector = document.querySelector('#selector')
 const menu = document.querySelector('.menubottom')
-const trash = document.querySelector('.fa-solid fa-trash-can')
+const trash = document.querySelector('.deleteZone')
+
 
 /* PINTAR LAS TAREAS  -FUNCIONA */
 function pintarTareas(pTareas, pDom) {
@@ -35,17 +36,20 @@ btnTask.addEventListener('click', addTask)
 function addTask() {
     let nombre = taskName.value
     let prioridad = selector.value.toLowerCase()
+    let id = 4;
 
     if (nombre !== "" && prioridad !== 'prioridad') {
         const newTask = {
+            id: id,
             nombre: nombre,
             descripcion: "",
             prioridad: prioridad,
         }
-
+        id++
         tasks.push(newTask);
         pintarTarea(newTask, taskBox)
     } else { alert('No dejes campos en blanco') }
+
 }
 
 /* BUSCADOR SEMANTICO -FUNCIONA*/
@@ -59,24 +63,22 @@ function busqueda(event) {
 
 /* PINTAR EL MENU BOTTOM */
 
-/* btnArrow.addEventListener('click', printMenu(menu))
+btnArrow.addEventListener('click', showMenu)
 
-function printMenu(pDom) {
-    pDom.innerHTML += `<div class="taskNameSelector">
-        <input class="inText" type="text" placeholder="Nombre de la tarea">
-        <select name="" id="selector">
-            <option value="Prioridad" selected='selected'>Prioridad</option>
-            <option value="Baja">Baja</option>
-            <option value="Media">Media</option>
-            <option value="Alta">Alta</option>
-        </select>
-    </div>
-    <input placeholder="Buscar tarea" class="inSearch" type="text">`
-} */
+function showMenu() {
+    if (menu.className === 'menubottom') {
+        menu.classList.replace('menubottom', 'menubottomh')
+        btnArrow.classList.replace('btnArrow', 'btnArrowRotate')
+    } else {
+        menu.classList.replace('menubottomh', 'menubottom')
+        btnArrow.classList.replace('btnArrowRotate', 'btnArrow')
+    }
+}
 
 /* ELIMINAR TAREAS */
 
-/* trash.addEventListener('click', removeTask)
-
-function removeTask
- */
+trash.addEventListener('click', removeTask)
+pId =
+    function removeTask(pId) {
+        listaDelete = tasksReverse.splice(pId - 1)
+    }
