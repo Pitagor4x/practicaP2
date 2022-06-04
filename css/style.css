@@ -56,7 +56,6 @@ header p{
 }
 
 .menubottom{
-    padding: 0.5em;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -135,15 +134,16 @@ header p{
     transform: rotateZ(180deg);
 }
 
-select{
+#selector1, #selector2{
     width: auto;
     background-color: gainsboro;
     border: none;
     border-radius: 15px;
-    color: black;
+    color: darkslategrey;
     padding: 5px;
     box-shadow: 2px 2px 2px grey;
- }
+}
+
  
  .inText{
      margin-right: 1em;
@@ -155,10 +155,10 @@ select{
     padding: 5px;
     box-shadow: 2px 2px 2px grey;
    
- }
+}
  
  .inSearch{
-    
+    margin-right: 1em;
      margin-top: 1em;
      width: 150px;
      background-color: gainsboro;
@@ -167,7 +167,11 @@ select{
      color: black;
      padding: 5px;
      box-shadow: 2px 2px 2px grey;
- }
+}
+
+input:focus {
+    outline: 2px solid grey;
+}
 
 /* FINAL MENU ADDTASK SEARCH-------------------------------- */
 
@@ -176,6 +180,7 @@ select{
 section{
     background-color: whitesmoke;
     height: 100vh;
+    padding-top: 1em;
 }
 
 article{
@@ -186,6 +191,7 @@ article{
     padding: 2em;
     box-shadow: 3px 3px 3px grey;
     position: relative;
+    margin-top: 0;
 }
 
 article:hover{
@@ -214,6 +220,7 @@ article p{
     position: absolute;
     right: 40px;
     bottom: 10px;
+    
 }
 
 .deleteZone>i{
@@ -238,17 +245,17 @@ article p{
 
 .baja{
     background-color: lightblue;
-    border: 1px solid darkblue;
+    border: 2px solid darkblue;
 }
 
 .media{
     background-color: lightgreen;
-    border: 1px solid darkgreen;
+    border: 2px solid darkgreen;
 }
 
 .alta{
     background-color: lightcoral;
-    border: 1px solid darkred;
+    border: 2px solid darkred;
 }
 
 /* FINAL PRIORIDADES------------------------------------- */

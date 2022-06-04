@@ -12,4 +12,8 @@ function filterByLetter(pTasks, pLetter) {
     return pTasks.filter(task => task.nombre.toLowerCase().includes(pLetter.toLowerCase()))
 }
 
-/*  */
+/* FUNCION FILTRO POR PRIORIDAD */
+
+function filterByPrioridad(pTasks, pPrioridad) {
+    return pTasks.filter(task => task.prioridad.toLowerCase() === pPrioridad.toLowerCase())
+}
