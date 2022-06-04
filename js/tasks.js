@@ -6,7 +6,7 @@ const tasks = new Array(
     },
     {
         nombre: 'Hacer la compra',
-        descripcion: 'Lentejas, pimiento, huevos, pollo y macarrones',
+        descripcion: 'Lentejas, pimientos, huevos, pollo y macarrones',
         prioridad: 'baja',
     },
     {

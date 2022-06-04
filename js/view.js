@@ -1,11 +1,12 @@
 const btnTask = document.querySelector('.btnTask');
 const btnSearch = document.querySelector('.btnSearch');
+const btnArrow = document.querySelector('.btnArrow')
 const taskName = document.querySelector('.inText');
 const searchBar = document.querySelector('.inSearch');
 const taskBox = document.querySelector('.flex');
 const selector = document.querySelector('#selector')
-
-const taskDescription = document.querySelector('article>p')
+const menu = document.querySelector('.menubottom')
+const trash = document.querySelector('.fa-solid fa-trash-can')
 
 /* PINTAR LAS TAREAS  -FUNCIONA */
 function pintarTareas(pTareas, pDom) {
@@ -29,38 +30,23 @@ pintarTareas(tasksReverse, taskBox)
 
 /* AÑADIR TAREAS AL ARRAY -FUNCIONA*/
 
-/* function addTask(pNombre, pDescripcion, pPrioridad) {
-    let nombre = pNombre;
-    let descripcion = pDescripcion;
-    let prioridad = pPrioridad
-
-    const newTask = {
-        nombre: nombre,
-        descripcion: descripcion,
-        prioridad: prioridad,
-    }
-
-    tasks.push(newTask);
-    pintarTarea(newTask, taskBox)
-} */
-
 btnTask.addEventListener('click', addTask)
 
 function addTask() {
     let nombre = taskName.value
     let prioridad = selector.value.toLowerCase()
 
-    const newTask = {
-        nombre: nombre,
-        descripcion: "",
-        prioridad: prioridad,
-    }
+    if (nombre !== "" && prioridad !== 'prioridad') {
+        const newTask = {
+            nombre: nombre,
+            descripcion: "",
+            prioridad: prioridad,
+        }
 
-    tasks.push(newTask);
-    pintarTarea(newTask, taskBox)
+        tasks.push(newTask);
+        pintarTarea(newTask, taskBox)
+    } else { alert('No dejes campos en blanco') }
 }
-
-/* addTask('Hola', 'Caracola', 'media') */
 
 /* BUSCADOR SEMANTICO -FUNCIONA*/
 
@@ -73,4 +59,24 @@ function busqueda(event) {
 
 /* PINTAR EL MENU BOTTOM */
 
+/* btnArrow.addEventListener('click', printMenu(menu))
+
+function printMenu(pDom) {
+    pDom.innerHTML += `<div class="taskNameSelector">
+        <input class="inText" type="text" placeholder="Nombre de la tarea">
+        <select name="" id="selector">
+            <option value="Prioridad" selected='selected'>Prioridad</option>
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+        </select>
+    </div>
+    <input placeholder="Buscar tarea" class="inSearch" type="text">`
+} */
+
 /* ELIMINAR TAREAS */
+
+/* trash.addEventListener('click', removeTask)
+
+function removeTask
+ */
