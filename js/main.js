@@ -6,8 +6,10 @@ const tasksReverse = [...tasks].reverse()
 
 const listPrioridades = tasks.map(task => task.prioridad);
 
-/* FUNCION BUSQUEDA SEMANTICA */
+/* FUNCION FILTRADO POR LETRA PARA BUSQUEDA SEMANTICA */
 
 function filterByLetter(pTasks, pLetter) {
     return pTasks.filter(task => task.nombre.toLowerCase().includes(pLetter.toLowerCase()))
 }
+
+/*  */

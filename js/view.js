@@ -3,6 +3,7 @@ const btnSearch = document.querySelector('.btnSearch');
 const taskName = document.querySelector('.inText');
 const searchBar = document.querySelector('.inSearch');
 const taskBox = document.querySelector('.flex');
+const selector = document.querySelector('#selector')
 
 const taskDescription = document.querySelector('article>p')
 
@@ -28,7 +29,7 @@ pintarTareas(tasksReverse, taskBox)
 
 /* AÑADIR TAREAS AL ARRAY -FUNCIONA*/
 
-function addTask(pNombre, pDescripcion, pPrioridad) {
+/* function addTask(pNombre, pDescripcion, pPrioridad) {
     let nombre = pNombre;
     let descripcion = pDescripcion;
     let prioridad = pPrioridad
@@ -36,6 +37,22 @@ function addTask(pNombre, pDescripcion, pPrioridad) {
     const newTask = {
         nombre: nombre,
         descripcion: descripcion,
+        prioridad: prioridad,
+    }
+
+    tasks.push(newTask);
+    pintarTarea(newTask, taskBox)
+} */
+
+btnTask.addEventListener('click', addTask)
+
+function addTask() {
+    let nombre = taskName.value
+    let prioridad = selector.value.toLowerCase()
+
+    const newTask = {
+        nombre: nombre,
+        descripcion: "",
         prioridad: prioridad,
     }
 
@@ -53,8 +70,6 @@ function busqueda(event) {
     let busqueda = event.target.value;
     pintarTareas(filterByLetter(tasksReverse, busqueda), taskBox)
 }
-
-/* EVENTO AÑADIR TAREA */
 
 /* PINTAR EL MENU BOTTOM */
 
