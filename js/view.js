@@ -61,7 +61,7 @@ function busqueda(event) {
     pintarTareas(filterByLetter(tasksReverse, busqueda), taskBox)
 }
 
-/* PINTAR EL MENU BOTTOM */
+/* PINTAR EL MENU BOTTOM ---FUNCIONA*/
 
 btnArrow.addEventListener('click', showMenu)
 
