@@ -41,10 +41,13 @@ btnTask.addEventListener('click', addTask)
 function addTask() {
     let nombre = taskName.value;
     let prioridad = selector.value.toLowerCase();
-    let id = tasks[tasks.length - 1].id + 1
     selector.value = "Prioridad";
     taskName.value = "";
-    /* id: tasks.length + 1, */
+
+    let id = 0;
+
+    (tasks.length === 0) ? id = lastID + 1 : id = tasks[tasks.length - 1].id + 1;
+
     if (nombre !== "" && prioridad !== 'prioridad') {
         const newTask = {
             id: id,
@@ -53,6 +56,7 @@ function addTask() {
             prioridad: prioridad,
         }
         tasks.push(newTask);
+        lastID++;
         pintarTarea(newTask, taskBox)
     } else { alert('No dejes campos en blanco') }
 

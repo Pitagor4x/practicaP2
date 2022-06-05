@@ -16,3 +16,5 @@ const tasks = new Array(
     }
 
 )
+
+let lastID = 3;
