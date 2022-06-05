@@ -9,7 +9,6 @@ const menu = document.querySelector('.menubottom')
 const prioritySelector = document.querySelector('#selector2')
 const deleteZone = document.querySelectorAll('.deleteZone')
 
-
 /* PINTAR LAS TAREAS  -FUNCIONA */
 function pintarTareas(pTareas, pDom) {
     pDom.innerHTML = "";
@@ -40,8 +39,10 @@ pintarTareas(tasksReverse, taskBox)
 btnTask.addEventListener('click', addTask)
 
 function addTask() {
-    let nombre = taskName.value
-    let prioridad = selector.value.toLowerCase()
+    let nombre = taskName.value;
+    let prioridad = selector.value.toLowerCase();
+    selector.value = "Prioridad";
+    taskName.value = "";
 
     if (nombre !== "" && prioridad !== 'prioridad') {
         const newTask = {
@@ -63,6 +64,7 @@ searchBar.addEventListener('input', busqueda);
 function busqueda(event) {
     let busqueda = event.target.value;
     pintarTareas(filterByLetter(tasksReverse, busqueda), taskBox)
+
 }
 
 /* FILTRO POR PRIORIDAD ---FUNCIONA */
@@ -80,6 +82,11 @@ function seleccion(event) {
 btnArrow.addEventListener('click', showMenu)
 
 function showMenu() {
+    selector.value = "Prioridad";
+    taskName.value = "";
+    prioritySelector.value = "Prioridad";
+    searchBar.value = "";
+
     if (menu.className === 'menubottom') {
         menu.classList.replace('menubottom', 'menubottomh')
         btnArrow.classList.replace('btnArrow', 'btnArrowRotate')
