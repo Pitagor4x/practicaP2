@@ -19,8 +19,8 @@ function pintarTarea(pTarea, pDom) {
     let article = document.createElement('article')
     article.id = 'task_' + pTarea.id
     article.className = `${pTarea.prioridad}`
-    article.innerHTML = `<h3>${pTarea.nombre}</h3>
-    <p>${pTarea.descripcion}</p>`
+    article.innerHTML = `<h3>${pTarea.nombre}</h3>`
+    {/* <p>${pTarea.descripcion}</p>` */ }
 
     let deleteZone = document.createElement('div')
     deleteZone.className = 'deleteZone'
@@ -32,7 +32,7 @@ function pintarTarea(pTarea, pDom) {
     pDom.appendChild(article)
 }
 
-pintarTareas(tasksReverse, taskBox)
+pintarTareas(tasks, taskBox)
 
 /* AÑADIR TAREAS AL ARRAY ---FUNCIONA*/
 
@@ -44,14 +44,19 @@ function addTask() {
     selector.value = "Prioridad";
     taskName.value = "";
 
+    let id = 0;
+
+    (tasks.length === 0) ? id = lastID + 1 : id = tasks[tasks.length - 1].id + 1;
+
     if (nombre !== "" && prioridad !== 'prioridad') {
         const newTask = {
-            id: tasks.length + 1,
+            id: id,
             nombre: nombre,
             descripcion: "",
             prioridad: prioridad,
         }
         tasks.push(newTask);
+        lastID++;
         pintarTarea(newTask, taskBox)
     } else { alert('No dejes campos en blanco') }
 
@@ -63,7 +68,7 @@ searchBar.addEventListener('input', busqueda);
 
 function busqueda(event) {
     let busqueda = event.target.value;
-    pintarTareas(filterByLetter(tasksReverse, busqueda), taskBox)
+    pintarTareas(filterByLetter(tasks, busqueda), taskBox)
 
 }
 
@@ -73,8 +78,8 @@ prioritySelector.addEventListener('input', seleccion)
 function seleccion(event) {
     let seleccion = event.target.value;
     if (seleccion !== 'Prioridad') {
-        pintarTareas(filterByPrioridad(tasksReverse, seleccion), taskBox)
-    } else { pintarTareas(tasksReverse, taskBox) }
+        pintarTareas(filterByPrioridad(tasks, seleccion), taskBox)
+    } else { pintarTareas(tasks, taskBox) }
 }
 
 /* PINTAR EL MENU BOTTOM ---FUNCIONA*/
