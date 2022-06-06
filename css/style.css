@@ -1,0 +1,291 @@
+@import url(./reset.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;700&display=swap');
+/* font-family: 'Spline Sans Mono', monospace; */
+
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --font:'Spline Sans Mono', monospace;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* ---------------------------------------------------------------------------INICIO HEADER */
+header{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5em;
+}
+
+h1{
+    font-weight: bold;
+    color: gainsboro;
+    font-family: var(--font);
+    font-size: 1.5em;
+}
+
+header p{
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: var(--font);
+    color: gainsboro;
+
+}
+/* ------------------------------------------------------------------------FINAL HEADER */
+
+/* -------------------------------------------------------------------MENU*/
+.menu{
+    padding: 1em;
+    background-color: gainsboro;
+    overflow: hidden;
+}
+
+.menutop{
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1em;
+}
+
+.menubottom{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translatey(200px);
+    height: 0;
+    transition: 0.4s;
+}
+
+.menubottomh{
+    height: auto;
+    transform: translatey(0px);
+    visibility:visible;
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s; 
+}
+
+.btnTask , .btnSearch, .btnArrow{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px grey;
+    cursor: pointer;
+}
+
+.btnArrowRotate{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer; 
+}
+
+.btnSearch:hover{
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px grey;
+}
+.btnArrow:hover{
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px grey;
+}
+
+.btnTask:hover{
+    box-shadow: 4px 4px 4px grey;
+    transform: translateY(-2px);
+    
+} 
+
+.btnTask i, .btnSearch i , .btnArrow i{
+    color: white;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: 1px 1px 1px grey;
+    transition: 0s;
+}
+
+.btnArrowRotate i{
+    color: white;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: none;
+    transform: rotateZ(180deg);
+}
+
+#selector1, #selector2{
+    width: auto;
+    background-color: gainsboro;
+    border: none;
+    border-radius: 15px;
+    color: rgb(102,102,102);
+    padding: 5px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+ 
+ .inText{
+     margin-right: 1em;
+    width: 150px;
+    background-color: gainsboro;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    box-shadow: 2px 2px 2px grey;
+   
+}
+ 
+ .inSearch{
+    margin-right: 1em;
+     margin-top: 1em;
+     width: 150px;
+     background-color: gainsboro;
+     border: none;
+     border-radius: 15px;
+     color: black;
+     padding: 5px;
+     box-shadow: 2px 2px 2px grey;
+}
+
+input:focus {
+    outline: 2px solid grey;
+}
+
+.flex>h4{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    font-size: 1.2em;
+    background-color: gainsboro;
+    height: 100px;
+    font-family: var(--font);
+}
+
+/* FINAL MENU ADDTASK SEARCH-------------------------------- */
+
+/* INICIO TASKBOX------------------------------- */
+
+section{
+    background-color: whitesmoke;
+    height: 100vh;
+    padding-top: 1em;
+}
+
+article{
+    background-color: gainsboro;
+    margin: 1em auto;
+    width: 85%;
+    border-radius: 40px;
+    padding: 1.5em;
+    box-shadow: 3px 3px 3px grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+article:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px grey;
+    transition: 0.2s;
+}
+
+h3{
+    font-family: var(--font);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+.deleteZone>i{
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+    background-color: red;
+    box-shadow: 1px 1px 1px darkred;
+    cursor: pointer;
+}
+
+.deleteZone:hover i{
+    box-shadow: 3px 3px 3px darkred;
+    transform: translateY(-2px);
+
+}
+
+
+
+/* FINAL TASKBOX---------------------------------------- */
+
+/* PRIORIDAD TAREAS------------------------------------- */
+
+.baja{
+    background-color: lightblue;
+    border: 2px solid darkblue;
+}
+
+.media{
+    background-color: lightgreen;
+    border: 2px solid darkgreen;
+}
+
+.alta{
+    background-color: lightcoral;
+    border: 2px solid darkred;
+}
+
+/* FINAL PRIORIDADES------------------------------------- */
+
+/* MEDIAQUERYS */
+
+@media(min-width: 850px){
+    .flex{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    article{
+        margin: 2em 1em;
+        width: calc(25% - 2em);
+        min-height: 100px;
+    }
+
+    .flex>h4{
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1em auto;
+        font-size: 1.2em;
+        background-color: gainsboro;
+        height: 100px;
+        font-family: var(--font);
+    }
+}
+
