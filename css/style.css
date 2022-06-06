@@ -173,6 +173,18 @@ input:focus {
     outline: 2px solid grey;
 }
 
+.flex>h4{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    font-size: 1.2em;
+    background-color: gainsboro;
+    height: 100px;
+    font-family: var(--font);
+}
+
 /* FINAL MENU ADDTASK SEARCH-------------------------------- */
 
 /* INICIO TASKBOX------------------------------- */
@@ -190,7 +202,6 @@ article{
     border-radius: 40px;
     padding: 1.5em;
     box-shadow: 3px 3px 3px grey;
-    /* position: relative; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -227,6 +238,7 @@ h3{
 }
 
 
+
 /* FINAL TASKBOX---------------------------------------- */
 
 /* PRIORIDAD TAREAS------------------------------------- */
@@ -261,6 +273,19 @@ h3{
         margin: 2em 1em;
         width: calc(25% - 2em);
         min-height: 100px;
+    }
+
+    .flex>h4{
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1em auto;
+        font-size: 1.2em;
+        background-color: gainsboro;
+        height: 100px;
+        font-family: var(--font);
     }
 }
 

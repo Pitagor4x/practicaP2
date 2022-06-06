@@ -11,9 +11,17 @@ const deleteZone = document.querySelectorAll('.deleteZone')
 
 /* PINTAR LAS TAREAS  -FUNCIONA */
 function pintarTareas(pTareas, pDom) {
-    pDom.innerHTML = "";
-    pTareas.forEach(tarea => pintarTarea(tarea, pDom));
+    if (pTareas.length !== 0) {
+        pDom.innerHTML = "";
+        pTareas.forEach(tarea => pintarTarea(tarea, pDom));
+    } else {
+        /* pDom.innerHTML = ""; */
+        pDom.innerHTML = `<h4>NO HAY TAREAS PARA MOSTRAR</h4>`;
+    }
 }
+
+
+
 
 function pintarTarea(pTarea, pDom) {
     let article = document.createElement('article')
@@ -37,6 +45,11 @@ pintarTareas(tasks, taskBox)
 /* AÑADIR TAREAS AL ARRAY ---FUNCIONA*/
 
 btnTask.addEventListener('click', addTask)
+let lastId = 0;
+let getLastId = localStorage.getItem('lastId')
+if (getLastId) {
+    lastId = JSON.parse(localStorage.getItem('lastId'))
+}
 
 function addTask() {
     let nombre = taskName.value;
@@ -44,20 +57,18 @@ function addTask() {
     selector.value = "Prioridad";
     taskName.value = "";
 
-    let id = 0;
-
-    (tasks.length === 0) ? id = lastID + 1 : id = tasks[tasks.length - 1].id + 1;
-
     if (nombre !== "" && prioridad !== 'prioridad') {
         const newTask = {
-            id: id,
+            id: lastId + 1,
             nombre: nombre,
             descripcion: "",
             prioridad: prioridad,
         }
         tasks.push(newTask);
-        lastID++;
-        pintarTarea(newTask, taskBox)
+        lastId++;
+        localStorage.setItem('lastId', JSON.stringify(lastId))
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+        pintarTareas(tasks, taskBox)
     } else { alert('No dejes campos en blanco') }
 
 }
@@ -106,28 +117,31 @@ function showMenu() {
 
 function removeTask(event) {
 
-    let idData = event.target.parentNode.dataset.id
+    let idData = parseInt(event.target.parentNode.dataset.id)
 
     let deleteTask = document.querySelector('#task_' + idData)
 
     deleteTask.parentNode.removeChild(deleteTask)
 
     const deletePosition = tasks.findIndex(task => task.id === idData);
+
     tasks.splice(deletePosition, 1);
 
+    pintarTareas(tasks, taskBox)
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+
 }
 
-/* function removeTask(event) {
-    let id = parseInt(event.target.dataset.id)
-    let taskToRemove = document.querySelector('#task_' + id)
-    console.log(taskToRemove);
-    let newList = taskToRemove.parentNode.removeChild(taskToRemove);
-    tasks = deleteTask(tasks, id);
-    if (tasks.length === 0) {
-        pintarTareas(tasks, taskBox);
-    }
+/* LOCAL STORAGE */
+
+let initialStorage = localStorage.getItem('tasks')
+if (initialStorage) {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+    pintarTareas(tasks, taskBox)
 }
 
-function deleteTask(pList, pId) {
-    return pList.filter(task => task.id !== pId);
-} */
+
+
+
+

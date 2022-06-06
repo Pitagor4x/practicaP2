@@ -1,6 +1,4 @@
 /* REVERTIR EL ARRAY PARA QUE PRIMERO PINTE LAS ULTIMAS TAREAS AÑADIDAS */
-
-
 /* ARRAY SIMPLE PRIORIDADES */
 
 const listPrioridades = tasks.map(task => task.prioridad);
